@@ -1,0 +1,29 @@
+# LaTeX
+build/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# sistema y editores
+desktop.ini
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+~$*
