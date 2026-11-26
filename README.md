@@ -18,4 +18,10 @@ Se necesita Python 3 con `numpy` y `matplotlib`:
 pip install numpy matplotlib
 ```
 
-El programa se corre desde la raíz del repositorio.
+El programa se corre desde la raíz del repositorio:
+
+```
+python codigo/mallas.py
+```
+
+Imprime las matrices de cada circuito y guarda los grafos en `reporte/img/`.
