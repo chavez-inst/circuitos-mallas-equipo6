@@ -66,7 +66,7 @@ def dibujarTierra(ax, posicion, direccion):
         ax.plot(*zip(a, b), color="black", lw=1.6)
 
 
-def dibujarGrafo(circuito):
+def figuraGrafo(circuito):
     posiciones = circuito["posiciones"]
     fig, ax = plt.subplots(figsize=(7, 5))
 
@@ -87,6 +87,11 @@ def dibujarGrafo(circuito):
     ax.set_aspect("equal")
     ax.axis("off")
     ax.margins(0.12)
+    return fig
+
+
+def dibujarGrafo(circuito):
+    fig = figuraGrafo(circuito)
     # la ruta del archivo se toma desde la raiz del repositorio, se corra desde donde se corra
     raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     archivo = os.path.join(raiz, circuito["archivoGrafo"])

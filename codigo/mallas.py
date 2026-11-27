@@ -61,6 +61,10 @@ def resolver(circuito):
 
     # ecuaciones de mallas
     Zm = M @ Z @ M.T
+    # si Zm casi no tiene inversa no hay solucion con esos valores, por ejemplo cuando
+    # un inductor y un capacitor se cancelan justo a esa frecuencia
+    if np.linalg.cond(Zm) > 1e12:
+        raise ValueError("la matriz Zm no tiene inversa con estos valores")
     Esm = M @ Z @ Jsk - M @ Vsk
     Im = np.linalg.inv(Zm) @ Esm
     Jk = M.T @ Im
@@ -75,7 +79,9 @@ def resolver(circuito):
 
 
 # ===== 1. PROGRAMA PRINCIPAL =====
-for circuito in circuitos:
-    resolver(circuito)
-    dibujarGrafo(circuito)
-    print(f"\ngrafo guardado en {circuito['archivoGrafo']}")
+# esta parte solo corre con python codigo/mallas.py, no cuando la interfaz usa resolver
+if __name__ == "__main__":
+    for circuito in circuitos:
+        resolver(circuito)
+        dibujarGrafo(circuito)
+        print(f"\ngrafo guardado en {circuito['archivoGrafo']}")
