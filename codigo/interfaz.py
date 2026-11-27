@@ -138,7 +138,7 @@ def crearPortada(ventana, abrirCircuito):
     datos = ttk.Frame(portada)
     datos.pack(pady=20)
     renglones = [("Equipo:", "6"), ("Tipo de examen:", "A"), ("Integrantes:", "\n".join(INTEGRANTES)),
-                 ("Semestre:", "2027-1"), ("Fecha de entrega:", "26 de noviembre de 2026")]
+                 ("Semestre:", "2027-1")]
     for k, (etiqueta, valor) in enumerate(renglones):
         ttk.Label(datos, text=etiqueta, font=("Segoe UI", 10, "bold")).grid(row=k, column=0, sticky="ne", padx=6, pady=2)
         ttk.Label(datos, text=valor, font=("Segoe UI", 10)).grid(row=k, column=1, sticky="nw", pady=2)
